@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module iuropa_parse</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">iuropa_parse</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/galileo/Documents/Projects/Jupyter/iuropa_parse.py">/home/galileo/Documents/Projects/Jupyter/iuropa_parse.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="duckdb.html">duckdb</a><br>
+<a href="eurlex.html">eurlex</a><br>
+</td><td class="multicolumn"><a href="logging.html">logging</a><br>
+<a href="networkx.html">networkx</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"><a href="re.html">re</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="iuropa_parse.html#IuropaDB">IuropaDB</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="IuropaDB">class <strong>IuropaDB</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#IuropaDB">IuropaDB</a>(court='Court&nbsp;of&nbsp;Justice',&nbsp;exclude_par_zero=True)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="IuropaDB-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="IuropaDB-__exit__"><strong>__exit__</strong></a>(self, exc_type, exc_value, traceback)</dt></dl>
+
+<dl><dt><a name="IuropaDB-__init__"><strong>__init__</strong></a>(self, court='Court of Justice', exclude_par_zero=True)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="IuropaDB-get_all_paths"><strong>get_all_paths</strong></a>(self, G)</dt><dd><span class="code">Get&nbsp;all&nbsp;paths&nbsp;from&nbsp;roots&nbsp;to&nbsp;leaves.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;(graph):&nbsp;Graph&nbsp;from&nbsp;which&nbsp;to&nbsp;extract&nbsp;the&nbsp;paths.</span></dd></dl>
+
+<dl><dt><a name="IuropaDB-get_citations"><strong>get_citations</strong></a>(self, a=(None, None), b=(None, None))</dt><dd><span class="code">Get&nbsp;the&nbsp;citation&nbsp;between&nbsp;two&nbsp;cases/paragraphs.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;(tuple,&nbsp;optional):&nbsp;Citing&nbsp;case&nbsp;and&nbsp;paragraph.&nbsp;Defaults&nbsp;to&nbsp;(None,&nbsp;None).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;(tuple,&nbsp;optional):&nbsp;Cited&nbsp;case&nbsp;and&nbsp;paragraph.&nbsp;Defaults&nbsp;to&nbsp;(None,&nbsp;None).</span></dd></dl>
+
+<dl><dt><a name="IuropaDB-get_graph"><strong>get_graph</strong></a>(self, ecli, par, save=False)</dt><dd><span class="code">Generate&nbsp;the&nbsp;graph&nbsp;starting&nbsp;from&nbsp;a&nbsp;particular&nbsp;case.<br>
+In&nbsp;the&nbsp;future&nbsp;from&nbsp;multiple&nbsp;cases.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ecli&nbsp;(str):&nbsp;ECLI&nbsp;of&nbsp;the&nbsp;case&nbsp;from&nbsp;which&nbsp;to&nbsp;generate&nbsp;the&nbsp;graph.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;paragraph&nbsp;(str,&nbsp;optional):&nbsp;Paragraph&nbsp;number&nbsp;from&nbsp;which&nbsp;to&nbsp;generate&nbsp;the&nbsp;graph.&nbsp;Defaults&nbsp;to&nbsp;None&nbsp;to&nbsp;run&nbsp;for&nbsp;all..<br>
+&nbsp;&nbsp;&nbsp;&nbsp;save&nbsp;(bool,&nbsp;optional):&nbsp;Export&nbsp;the&nbsp;graph&nbsp;to&nbsp;a&nbsp;graphml&nbsp;file.&nbsp;Defaults&nbsp;to&nbsp;False.</span></dd></dl>
+
+<dl><dt><a name="IuropaDB-get_nodes_with_attribute"><strong>get_nodes_with_attribute</strong></a>(self, graph, attribute, value)</dt><dd><span class="code">Get&nbsp;all&nbsp;nodes&nbsp;in&nbsp;the&nbsp;graph&nbsp;with&nbsp;a&nbsp;certain&nbsp;attribute.<br>
+Example:&nbsp;get&nbsp;all&nbsp;Paragraph&nbsp;nodes.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;graph&nbsp;(graph):&nbsp;Variable&nbsp;containing&nbsp;the&nbsp;networkx&nbsp;graph.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;(str):&nbsp;Specific&nbsp;attribute&nbsp;we&nbsp;are&nbsp;interested&nbsp;in.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;(str):&nbsp;Value&nbsp;of&nbsp;the&nbsp;attribute<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;List&nbsp;of&nbsp;items&nbsp;that&nbsp;have&nbsp;the&nbsp;attribute.</span></dd></dl>
+
+<dl><dt><a name="IuropaDB-print_stats"><strong>print_stats</strong></a>(self)</dt><dd><span class="code">Print&nbsp;the&nbsp;stats&nbsp;on&nbsp;citations&nbsp;in&nbsp;the&nbsp;db.</span></dd></dl>
+
+<dl><dt><a name="IuropaDB-set_citations_table"><strong>set_citations_table</strong></a>(self, ecli, paragraph=None, unnest=False, text=False, show_empty=False, to_dict=False, save=False)</dt><dd><span class="code">Extract&nbsp;the&nbsp;citations&nbsp;from&nbsp;the&nbsp;db<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ecli&nbsp;(str):&nbsp;ECLI&nbsp;of&nbsp;the&nbsp;case&nbsp;from&nbsp;which&nbsp;to&nbsp;extract&nbsp;the&nbsp;citations.&nbsp;Set&nbsp;to&nbsp;None&nbsp;to&nbsp;run&nbsp;for&nbsp;all.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;paragraph&nbsp;(str,&nbsp;optional):&nbsp;Paragraph&nbsp;number&nbsp;from&nbsp;which&nbsp;to&nbsp;extract&nbsp;the&nbsp;citations.&nbsp;Defaults&nbsp;to&nbsp;None&nbsp;to&nbsp;run&nbsp;for&nbsp;all..<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unnest&nbsp;(bool,&nbsp;optional):&nbsp;Split&nbsp;the&nbsp;citations&nbsp;in&nbsp;one&nbsp;line&nbsp;for&nbsp;each&nbsp;source.&nbsp;Defaults&nbsp;to&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;(bool,&nbsp;optional):&nbsp;Fetch&nbsp;the&nbsp;text&nbsp;for&nbsp;the&nbsp;cited&nbsp;and&nbsp;citing&nbsp;paragraphs.&nbsp;Defaults&nbsp;to&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;show_empty&nbsp;(bool,&nbsp;optional):&nbsp;Include&nbsp;paragraphs&nbsp;with&nbsp;no&nbsp;further&nbsp;citations.&nbsp;Defaults&nbsp;to&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to_dict&nbsp;(bool,&nbsp;optional):&nbsp;Return&nbsp;the&nbsp;result&nbsp;as&nbsp;a&nbsp;python&nbsp;dict.&nbsp;Defaults&nbsp;to&nbsp;False.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;save&nbsp;(bool,&nbsp;optional):&nbsp;Save&nbsp;the&nbsp;result&nbsp;to&nbsp;a&nbsp;new&nbsp;table&nbsp;in&nbsp;the&nbsp;db.&nbsp;Defaults&nbsp;to&nbsp;False.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>BATCH_SIZE</strong> = 256<br>
+<strong>DB_FILE</strong> = 'datasette/iuropa.duckdb'<br>
+<strong>FILENAME</strong> = 'iuropa_text.gz.parquet'<br>
+<strong>REGEX</strong> = r'(?:C.|\()(\d+?\/\d+)(?:.{0,30}? points? (((\d+)(?:([\w\s]+?)(\d+))*)))'<br>
+<strong>REGEX_ART</strong> = r'(\d+)(?:([\w\s]+?)(\d+))*'</td></tr></table>
+</body></html>

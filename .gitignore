@@ -1,0 +1,11 @@
+**/env/
+old
+.ipynb_checkpoints
+__pycache__
+eur_lex_cache.sqlite
+*.log
+datasette/iuropa.duckdb
+
+# Skip large files
+*.parquet
+*.feather
