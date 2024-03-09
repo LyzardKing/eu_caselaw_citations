@@ -325,7 +325,6 @@ select DISTINCT  concat(cited_ecli, '_', cited_paragraph_number) as par_id, cite
                         graph.add_node(a, labels=":Case", ecli=a)
                     graph.add_edge(i, a, label=":BELONGS_TO")
             nx.write_graphml(graph, f"{ecli}.graphml", named_key_ids=True)
-            # nx.write_graphml(graph, f"~/.config/Neo4j Desktop/Application/relate-data/dbmss/dbms-5a369a5d-5999-445e-b4d6-7ac92b4ef03d/import/{ecli.replace(':', '_').lower()}", named_key_ids=True)
             return graph
             # self.get_all_paths(graph)
         else:

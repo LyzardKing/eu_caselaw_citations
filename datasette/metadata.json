@@ -1,0 +1,31 @@
+{
+  "title": "Ourlex/Iuropa citation database",
+  "description": "Some description text can go here",
+  "license": "TBD",
+  "license_url": "https://opendatacommons.org/licenses/odbl/",
+  "source": "Original Data Source",
+  "source_url": "http://example.com/",
+  "plugins": {
+    "datasette-parquet": {
+      "citations": {
+        "file": "iuropa.duckdb"
+      }
+    }
+  },
+  "databases": {
+    "citations": {
+      "tables": {
+        "lines": {
+          "hidden": true
+        },
+        "paragraphs": {
+          "hidden": true
+        },
+        "citations": {
+          "facets": ["cited_ecli"],
+          "facet-size": 10
+        }
+      }
+    }
+  }
+}

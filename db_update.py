@@ -37,5 +37,13 @@ set ECLI_TO = get_ecli(CELEX_TO)
 """
         con.sql(command)
 
+def _get_paths(ecli: str, paragraph: int) -> list:
+    command = """
+select ECLI_FROM, ECLI_TO, CELEX_FROM, CELEX_TO, PAR_FROM, PAR_TO
+from citations
+where ECLI_FROM = '{}' and PAR_FROM = {}
+""".format(ecli, paragraph)
+    return con.execute(command).fetchall()
+
 # _add_ecli_cols()
 _set_ecli()
